@@ -536,7 +536,7 @@ static int __init tiny_init(void)
 	retval = tty_register_driver(tiny_tty_driver);
 	if (retval) {
 		pr_err("failed to register tiny tty driver");
-		put_tty_driver(tiny_tty_driver);
+		tty_driver_kref_put(tiny_tty_driver);
 		return retval;
 	}
 
