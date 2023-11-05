@@ -503,6 +503,7 @@ static const struct tty_operations serial_ops = {
 	.ioctl = tiny_ioctl,
 };
 
+extern struct tty_driver *alloc_tty_driver(unsigned int lines); 
 static struct tty_driver *tiny_tty_driver;
 
 static int __init tiny_init(void)
